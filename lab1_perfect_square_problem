@@ -12,7 +12,7 @@ int main()
             if(((j/10)% 10)% 2 == 1) //checking if the last two digits are odd
             cout << "The first perfect square number in which the last two digits are odd is: "<< j << endl;
         }
-        i++;
+        i++; //increase the value of i to test all the numbers from 1 to 100
         if(i > 100)
             cout<<"The perfect square number in which the last two digits are odd does not exist."<<endl;
     }
