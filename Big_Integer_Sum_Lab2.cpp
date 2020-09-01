@@ -5,7 +5,7 @@
 //  Idea: We reverse both strings and kept adding digits one by one from the 0th
 //  index using the loop until the end of smaller string, sum % 10 is attached to
 //  the end of result and the carryover is tracked by sum / 10. Result is reversed
-// to counter the previous reversal
+//  to counter the previous reversal
 
 #include <iostream>
 #include<algorithm>
