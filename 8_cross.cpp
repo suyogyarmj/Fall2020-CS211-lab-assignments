@@ -58,7 +58,7 @@ void next(int q[], int c)
 }
 
 int main() 
-,{
+{
    int q[8]; // initializing array q
    next(q, 0); // calling next function
    return 0;
