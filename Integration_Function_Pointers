@@ -1,0 +1,47 @@
+//  Name: Rayamajhi,Suyogya
+//  CS211 21F Lab9
+//  Implementing Numerical Integration Using Function Pointers i.e. Riemann Sum
+
+#include <iostream>
+using namespace std;
+
+typedef double (*FUNC)(double); // typedef declaration for *FUNC
+
+// x represents the horizontal position of the rectangle
+// f(x) represents the height, and increment represents the width.
+// Use the midpoint of each subinterval as the height of each rectangle for a more accurate approximation
+
+double integrate(FUNC f, double a, double b) 
+{
+   double sum = 0, increment = .0001;
+   for (double x = a + increment/2; x < b; x += increment) // for every rectangle
+      sum += f(x) * increment;                             // calculate area and add it to the sum
+   return sum;
+}
+
+// line, square and cube function definitions
+
+double line(double x)
+{
+   return x;
+}
+
+double square(double x)
+{
+   return x*x;
+}
+
+double cube(double x)
+{
+   return x*x*x;
+}
+
+// function calls for a = 1 & b = 5
+
+int main() 
+{  
+   cout<< "The integral of f(x)=x between 1 and 5 is: "<<integrate(line, 1, 5)<<endl;
+   cout<< "The integral of f(x)=x^2 between 1 and 5 is: "<<integrate(square, 1, 5)<<endl;
+   cout<< "The integral of f(x)=x^3 between 1 and 5 is: "<<integrate(cube, 1, 5)<<endl;
+   return 0;
+}
